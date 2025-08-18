@@ -1,0 +1,79 @@
+/* General styling for a flexible layout */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #343a40;
+    color: white;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* This ensures the body is at least the height of the viewport */
+}
+
+/* Header and navigation styling */
+.navbar img {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+h1, h2 {
+    color: #00ffcc;
+}
+
+.navbar-brand, .nav-link {
+    color: #00ffcc !important;
+}
+
+/* Main content area. The 'flex: 1' is the key change here. */
+main {
+    flex: 1; /* This makes the main content area grow and push the footer down */
+    padding-bottom: 50px; /* Optional: adds a little space at the bottom */
+}
+
+/* Footer styling for correct positioning */
+footer {
+    background-color: #555;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    margin-top: auto; /* This pushes the footer to the bottom of the page content */
+}
+
+/* Your custom scrolling text styles */
+.scrolling-text-container {
+    overflow: hidden;
+    white-space: nowrap;
+    background-image: none; /* Removing the background image */
+    background-color: #f0ad4e;
+    padding: 20px 0;
+    position: relative;
+}
+
+.scrolling-text {
+    display: inline-block;
+    animation: scroll-left 15s linear infinite;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: #343a40;
+    white-space: nowrap;
+    text-shadow: none;
+}
+
+.scroll-item {
+    margin-right: 2rem;
+    display: inline-block;
+    background-color: transparent; /* No background for individual items */
+    padding: 5px 10px; /* Add some padding for the background */
+    border-radius: 5px; /* Optional: adds rounded corners */
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
