@@ -24,11 +24,60 @@ nav ul li {
   margin: 5px 10px;
 }
 
-/* Mobile-friendly text */
+/* General body styles */
+html, body {
+  height: 100%;          /* Ensure body takes full height */
+  margin: 0;
+}
+
 body {
   font-family: Arial, sans-serif;
   line-height: 1.5;
   font-size: 16px;
+
+  display: flex;         /* For sticky footer */
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main grows to push footer down */
+main {
+  flex: 1;
+}
+
+/* Footer */
+footer {
+  margin-top: auto;      /* Sticks to bottom when content is short */
+  background: #6c757d;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Continuous Scrolling Text */
+.scrolling-text-container {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #111;
+  color: #ff4c4c;
+  font-weight: bold;
+  padding: 10px 0;
+  position: relative;
+}
+
+.scrolling-text {
+  display: inline-flex;
+  animation: scroll-left 15s linear infinite;
+}
+
+.scrolling-text span {
+  padding-right: 3rem; /* spacing between phrases */
+}
+
+/* Keyframes for infinite loop */
+@keyframes scroll-left {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* Mobile breakpoint */
